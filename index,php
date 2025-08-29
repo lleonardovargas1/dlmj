@@ -1,0 +1,249 @@
+-- phpMyAdmin SQL Dump
+
+-- version 5.2.1
+
+-- https://www.phpmyadmin.net/
+
+--
+
+-- Host: 127.0.0.1
+
+-- Tempo de geração: 29/08/2025 às 13:27
+
+-- Versão do servidor: 10.4.32-MariaDB
+
+-- Versão do PHP: 8.0.30
+ 
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+
+START TRANSACTION;
+
+SET time_zone = "+00:00";
+ 
+ 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+
+/*!40101 SET NAMES utf8mb4 */;
+ 
+--
+
+-- Banco de dados: `bom_barato_celulares`
+
+--
+ 
+-- --------------------------------------------------------
+ 
+--
+
+-- Estrutura para tabela `categoria`
+
+--
+ 
+CREATE TABLE `categoria` (
+
+  `categoriaid` int(11) NOT NULL,
+
+  `nome` varchar(100) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ 
+--
+
+-- Despejando dados para a tabela `categoria`
+
+--
+ 
+INSERT INTO `categoria` (`categoriaid`, `nome`) VALUES
+
+(1, 'iPhone'),
+
+(2, 'Motorola'),
+
+(3, 'Samsung');
+ 
+-- --------------------------------------------------------
+ 
+--
+
+-- Estrutura para tabela `categorias`
+
+--
+ 
+CREATE TABLE `categorias` (
+
+  `CategoriaID` int(11) NOT NULL,
+
+  `Nome` varchar(100) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ 
+--
+
+-- Despejando dados para a tabela `categorias`
+
+--
+ 
+INSERT INTO `categorias` (`CategoriaID`, `Nome`) VALUES
+
+(1, 'Iphone'),
+
+(2, 'Motorola'),
+
+(3, 'Samsung');
+ 
+-- --------------------------------------------------------
+ 
+--
+
+-- Estrutura para tabela `produtos`
+
+--
+ 
+CREATE TABLE `produtos` (
+
+  `ProdutoID` int(199) NOT NULL,
+
+  `Nome` varchar(100) NOT NULL,
+
+  `NomeEspecifico` varchar(300) NOT NULL,
+
+  `Preco` float NOT NULL,
+
+  `Descricao` varchar(1999) NOT NULL,
+
+  `Avaliacao` int(11) NOT NULL,
+
+  `Img` varchar(255) NOT NULL,
+
+  `CategoriaID` int(11) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ 
+--
+
+-- Despejando dados para a tabela `produtos`
+
+--
+ 
+INSERT INTO `produtos` (`ProdutoID`, `Nome`, `NomeEspecifico`, `Preco`, `Descricao`, `Avaliacao`, `Img`, `CategoriaID`) VALUES
+
+(4, 'iPhone 14', 'iPhone 14 Pro Max 256GB', 7999.9, 'O melhor da Apple até agora.', 5, 'https://americanas.vtexassets.com/arquivos/ids/427107/7473026987_2SZ.jpg?v=638750821485770000', 1),
+
+(5, 'iPhone 13', 'iPhone 13 128GB', 4999.9, 'Potência e estilo.', 5, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F430883%2F7470705771_1SZ.jpg%3Fv%3D638750822549800000&w=768&q=90', 1),
+
+(6, 'iPhone SE', 'iPhone SE 64GB', 2999.9, 'Compacto e rápido.', 4, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F445189%2F43406471_1SZ.jpg%3Fv%3D638750824393130000&w=1280&q=90', 1),
+
+(7, 'Motorola Edge 30', 'Motorola Edge 30 Ultra 256GB', 3499.9, 'Alto desempenho e câmeras de qualidade.', 5, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F530245%2F7506832050_1SZ.jpg%3Fv%3D638750831737030000&w=1280&q=90', 2),
+
+(8, 'Motorola G82', 'Moto G82 128GB', 1799.9, 'Equilíbrio custo-benefício.', 4, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F459650%2F7497325708_1SZ.jpg%3Fv%3D638865574605930000&w=1280&q=90', 2),
+
+(9, 'Motorola G52', 'Moto G52 128GB', 1599.9, 'Bateria de longa duração.', 4, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F464493%2F7497325712_1SZ.jpg%3Fv%3D638750826153630000&w=1280&q=90', 2),
+
+(10, 'Samsung Galaxy S23', 'Galaxy S23 Ultra 512GB', 7499.9, 'Câmera de outro nível.', 5, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F35831988%2FNovo-Projeto.jpg%3Fv%3D638901899709170000&w=1280&q=90', 3),
+
+(11, 'Samsung Galaxy A54', 'Galaxy A54 128GB', 2299.9, 'Bom desempenho no dia a dia.', 4, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F35832247%2FNovo-Projeto--12-.jpg%3Fv%3D638901922851730000&w=1280&q=90', 3),
+
+(12, 'Samsung Galaxy M13', 'Galaxy M13 128GB', 1299.9, 'Ótima bateria e custo.', 4, 'https://www.americanas.com.br/_next/image?url=https%3A%2F%2Famericanas.vtexassets.com%2Farquivos%2Fids%2F12890169%2F6038027461_1_xlarge.jpg%3Fv%3D638754345327070000&w=1280&q=90', 3);
+ 
+--
+
+-- Índices para tabelas despejadas
+
+--
+ 
+--
+
+-- Índices de tabela `categoria`
+
+--
+
+ALTER TABLE `categoria`
+
+  ADD PRIMARY KEY (`categoriaid`);
+ 
+--
+
+-- Índices de tabela `categorias`
+
+--
+
+ALTER TABLE `categorias`
+
+  ADD PRIMARY KEY (`CategoriaID`);
+ 
+--
+
+-- Índices de tabela `produtos`
+
+--
+
+ALTER TABLE `produtos`
+
+  ADD PRIMARY KEY (`ProdutoID`),
+
+  ADD KEY `fk_categoria` (`CategoriaID`);
+ 
+--
+
+-- AUTO_INCREMENT para tabelas despejadas
+
+--
+ 
+--
+
+-- AUTO_INCREMENT de tabela `categoria`
+
+--
+
+ALTER TABLE `categoria`
+
+  MODIFY `categoriaid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ 
+--
+
+-- AUTO_INCREMENT de tabela `categorias`
+
+--
+
+ALTER TABLE `categorias`
+
+  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ 
+--
+
+-- AUTO_INCREMENT de tabela `produtos`
+
+--
+
+ALTER TABLE `produtos`
+
+  MODIFY `ProdutoID` int(199) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ 
+--
+
+-- Restrições para tabelas despejadas
+
+--
+ 
+--
+
+-- Restrições para tabelas `produtos`
+
+--
+
+ALTER TABLE `produtos`
+
+  ADD CONSTRAINT `fk_categoria` FOREIGN KEY (`CategoriaID`) REFERENCES `categorias` (`CategoriaID`);
+
+COMMIT;
+ 
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ 
